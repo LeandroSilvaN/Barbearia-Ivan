@@ -66,3 +66,46 @@
       color: #000;
       font-weight: 500;
     }
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banner {
+    height: 280px;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .banner {
+    height: 220px;
+  }
+
+  .banner h2 {
+    font-size: 28px;
+  }
+
+  section h3 {
+    font-size: 24px;
+  }
+}
+
+
