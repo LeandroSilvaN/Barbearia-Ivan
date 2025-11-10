@@ -1,0 +1,68 @@
+/* --- Estilo geral --- */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    /* --- Área de produtos --- */
+    section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    section h3 {
+      font-size: 28px;
+      margin-bottom: 50px;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .produto {
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .produto:hover {
+      transform: scale(1.03);
+    }
+
+    .produto img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .produto h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .produto p {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* --- Rodapé --- */
+    footer {
+      text-align: center;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }

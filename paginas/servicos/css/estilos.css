@@ -1,0 +1,40 @@
+body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+}
+
+.service-card img,
+.vertical-card img {
+      height: 220px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+}
+
+.card {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+}
+
+.card:hover {
+      transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+      .hero img {
+            height: 35vh;
+      }
+
+      .hero h1 {
+            font-size: 1.8rem;
+      }
+
+      .vertical-card {
+            margin: 0 auto;
+      }
+
+      .card img {
+            height: 180px;
+      }
+}
