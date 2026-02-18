@@ -7,7 +7,7 @@ O projeto foi elaborado visando aplicar conceitos de desenvolvimento web e entre
 ## 🔗 Acesse o Projeto
 
 👉 **Link do site:**  
-[Visitar Barbearia Ivan]([https://seu-link-aqui.com](https://leandrosilvan.github.io/Barbearia-Ivan/))
+<a href="https://leandrosilvan.github.io/Barbearia-Ivan/" target="_blank">Barbearia Ivan</a>
 
 ---
 
@@ -44,8 +44,3 @@ O projeto teve foco em:
 - Organização de layout com Bootstrap
 - Experiência do usuário
 - Integração com link externo (WhatsApp)
-
----
-
-## 📂 Estrutura do Projeto
-
