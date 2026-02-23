@@ -1,31 +1,29 @@
 <?php
 
 require_once "../../config/conection.php";
+session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    $result = $pdo->prepare("select email from users where email = ?");
+    $result = $pdo->prepare("select id, email, senha from users where email = ?");
     $result->execute([$email]);
     
-    $userEmail = $result->fetch();
+    $user = $result->fetch(PDO::FETCH_ASSOC);
 
-    if(!$userEmail){
-
+    if(!$user){
         header("Location: /page/auth/login.php?err=1");
         exit;
     }
- 
-    $resultSenha = $pdo->prepare("select senha from users where email = ?");
-    $resultSenha->execute([$userEmail[0]]);
 
-    $userSenha = $resultSenha->fetch(); 
+    if(!password_verify($senha, $user["senha"])){
+        header("Location: /page/auth/login.php?err=1");
+        exit;
+    }
     
-    if(!$userSenha){
-        header("Location: /page/auth/login.php?err=1");
-        exit;
-    }
+    $_SESSION["user_id"] = $user["id"];
+    $_SESSION["email"] = $user["email"];
 
     header("Location: /?logado=true");
     exit;  
