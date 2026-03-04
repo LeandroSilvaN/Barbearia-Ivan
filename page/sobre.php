@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.php"><strong>Barbearia Ivan</strong></a>
+            <a class="navbar-brand" href="../index.php"><strong>Barbearia Ivan</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    <li class="nav-item"><a class="nav-link" href="../../index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../page/servicos.php">Serviços</a></li>
                     <li class="nav-item"><a class="nav-link" href="../page/produtos.php">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link active" href="sobre.php">Sobre</a></li>
