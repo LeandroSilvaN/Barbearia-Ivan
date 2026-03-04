@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.php"><strong>Barbearia Ivan</strong></a>
+            <a class="navbar-brand" href="../index.php"><strong>Barbearia Ivan</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,7 @@
                     <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 ms-lg-3"
                         id="navbarNav">
                         <div class="d-flex gap-2 me-5">
-                            <a href="page/auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
                         </div>
                     </div>
 
