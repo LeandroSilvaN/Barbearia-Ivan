@@ -34,8 +34,8 @@
                     </div>
 
                     <li class="nav-item"><a class="nav-link" href="../../index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/page/servicos.php">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/page/produtos.php">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../page/servicos.php">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../page/produtos.php">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link active" href="sobre.php">Sobre</a></li>
                 </ul>
             </div>
