@@ -51,7 +51,7 @@
                             <a class="nav-link" href="page/servicos.php">Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="page/produtos.html">Produtos</a>
+                            <a class="nav-link" href="page/produtos.php">Produtos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="page/sobre.php">Sobre</a>
