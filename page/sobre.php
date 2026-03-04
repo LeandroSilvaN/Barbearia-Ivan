@@ -29,7 +29,7 @@
                     <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 ms-lg-3"
                         id="navbarNav">
                         <div class="d-flex gap-2 me-5">
-                            <a href="page/auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
                         </div>
                     </div>
 
