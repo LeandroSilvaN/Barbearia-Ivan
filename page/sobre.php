@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="pt-br">
 
 <head>
@@ -29,7 +32,27 @@
                     <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 ms-lg-3"
                         id="navbarNav">
                         <div class="d-flex gap-2 me-5">
-                            <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <?php if (isset($_SESSION['nome'])): ?>
+                                <div class="dropdown">
+                                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                        <li><span
+                                                class="dropdown-item disabled"><?php echo htmlspecialchars($_SESSION['email']); ?></span>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="agendamento.php">Agendar Horário</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="auth/logout.php">Sair</a></li>
+                                    </ul>
+                                </div>
+                            <?php else: ?>
+                                <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -159,7 +182,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
-            </script>
+        </script>
 </body>
 
 

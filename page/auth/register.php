@@ -1,3 +1,26 @@
+<?php
+session_start();
+include_once('../config/conection.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $senha = $_POST['senha'];
+
+    $sql = "INSERT INTO usuarios (nome, email, telefone, senha, role) VALUES ('$nome', '$email', '$telefone', '$senha', 'USUARIO')";
+
+    if (mysqli_query($conn, $sql)) {
+        $_SESSION['nome'] = $nome;
+        $_SESSION['email'] = $email;
+        $_SESSION['role'] = 'USUARIO';
+        header("Location: ../../index.php");
+        exit();
+    } else {
+        $erro = "Erro: " . mysqli_error($conn);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,6 +43,13 @@
                 <h2 class="fw-bold">Criar Conta</h2>
                 <p class="text-muted">Cadastre-se para continuar</p>
             </div>
+
+            <?php if (isset($erro)): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <?php echo htmlspecialchars($erro); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
 
             <form method="POST">
 

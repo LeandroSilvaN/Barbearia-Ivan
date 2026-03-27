@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +25,27 @@
                     <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0 ms-lg-3"
                         id="navbarNav">
                         <div class="d-flex gap-2 me-5">
-                            <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <?php if (isset($_SESSION['nome'])): ?>
+                                <div class="dropdown">
+                                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                        <li><span
+                                                class="dropdown-item disabled"><?php echo htmlspecialchars($_SESSION['email']); ?></span>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="agendamento.php">Agendar Horário</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="auth/logout.php">Sair</a></li>
+                                    </ul>
+                                </div>
+                            <?php else: ?>
+                                <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -64,7 +87,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Corte</h5>
                     <p class="text-muted">R$ 40,00</p>
-                    <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                    <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                         class="btn btn-dark">Agendar</a>
                 </div>
             </div>
@@ -74,7 +97,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Sobrancelha</h5>
                     <p class="text-muted">R$ 10,00</p>
-                    <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                    <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                         class="btn btn-dark">Agendar</a>
                 </div>
             </div>
@@ -84,7 +107,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">Barba</h5>
                     <p class="text-muted">R$ 25,00</p>
-                    <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                    <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                         class="btn btn-dark">Agendar</a>
                 </div>
             </div>
@@ -102,7 +125,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Corte + Sobrancelha</h6>
                         <p class="text-muted">R$ 45,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
@@ -114,7 +137,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Corte + Barba</h6>
                         <p class="text-muted">R$ 55,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
@@ -126,7 +149,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Corte + Sobrancelha + Barba</h6>
                         <p class="text-muted">R$ 65,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
@@ -138,7 +161,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Corte Infantil</h6>
                         <p class="text-muted">R$ 30,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
@@ -150,7 +173,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Lavagem e Hidratação</h6>
                         <p class="text-muted">R$ 60,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
@@ -162,7 +185,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Química</h6>
                         <p class="text-muted">R$ 90,00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511940740247" target="_blank"
+                        <a href="<?php echo isset($_SESSION['nome']) ? '../index.php' : 'auth/login.php'; ?>"
                             class="btn btn-dark btn-sm">Agendar</a>
                     </div>
                 </div>
