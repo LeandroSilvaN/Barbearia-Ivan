@@ -9,9 +9,22 @@ session_start();
     <title>Sobre - Barbearia Ivan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../styles/global.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+        body.dark .navbar {
+            background-color: #0b1220 !important;
+        }
+
+        body.dark .navbar-brand,
+        body.dark .nav-link {
+            color: #e6eef8 !important;
+        }
+
+        body.dark .nav-link:hover {
+            color: #60a5fa !important;
+        }
 
         body {
             font-family: "Poppins";
@@ -20,6 +33,7 @@ session_start();
 </head>
 
 <body>
+    <script src="../assets/js/theme-toggle.js"></script>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.php"><strong>Barbearia Ivan</strong></a>
@@ -39,20 +53,41 @@ session_start();
                                         Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li><span
-                                                class="dropdown-item disabled"><?php echo htmlspecialchars($_SESSION['email']); ?></span>
+
+                                        <li>
+                                            <span class="dropdown-item disabled">
+                                                <?php echo htmlspecialchars($_SESSION['nome']); ?>
+                                            </span>
                                         </li>
+
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="agendamento.php">Agendar Horário</a>
+
+                                        <li>
+                                            <a class="dropdown-item" href="cliente/perfil.php">
+                                                Perfil
+                                            </a>
                                         </li>
-                                        <li><a class="dropdown-item" href="auth/logout.php">Sair</a></li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="cliente/meus_agendamentos.php">
+                                                Meus Agendamentos
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="auth/logout.php">
+                                                Sair
+                                            </a>
+                                        </li>
+
                                     </ul>
                                 </div>
                             <?php else: ?>
                                 <a href="auth/login.php" class="btn btn-dark">Agendar Horário</a>
                             <?php endif; ?>
+                            <button id="theme-toggle" class="btn btn-outline-secondary ms-2" aria-label="Alternar tema">🌙</button>
                         </div>
                     </div>
 
