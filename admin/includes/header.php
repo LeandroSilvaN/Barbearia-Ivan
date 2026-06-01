@@ -77,11 +77,11 @@
                 <strong><?php echo htmlspecialchars($_SESSION['nome']); ?></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                <li><span class="dropdown-item disabled"><?php echo htmlspecialchars($_SESSION['email']); ?></span></li>
+                <li><span class="dropdown-item disabled"><?php echo htmlspecialchars($_SESSION['nome']); ?></span></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="../page/auth/logout.php">Sair</a></li>
+                <li><a class="dropdown-item" href="../page/auth/logout.php"><i class="bi bi-door-open me-2"></i>Sair</a></li>
             </ul>
         </div>
     </div>

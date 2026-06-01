@@ -11,14 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
+
     $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
     $resultado = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($resultado) == 1) {
         $usuario = mysqli_fetch_assoc($resultado);
-        $_SESSION["nome"] = $usuario['nome'];
-        $_SESSION["email"] = $usuario['email'];
-        $_SESSION["role"] = $usuario['role'];
+        $_SESSION['id'] = $usuario['id'];
+
+        $_SESSION['nome'] = $usuario['nome'];
+
+        $_SESSION['email'] = $usuario['email'];
+
+        $_SESSION['role'] = $usuario['role'];
 
         if ($usuario['role'] === 'ADMIN') {
             header("location: ../../admin/index.php");
@@ -53,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <?php if ($erro): ?>
                 <script>
-                    alert('error ao fazer login');
+                    alert('<?php echo $erro; ?>');
                 </script>
             <?php endif; ?>
 

@@ -9,7 +9,7 @@ if (!isset($_SESSION['nome']) || !isset($_SESSION['role']) || $_SESSION['role'] 
 $host = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "barbearia";
+$banco = "barbearia_ivan";
 
 $conn = mysqli_connect($host, $usuario, $senha, $banco);
 

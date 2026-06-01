@@ -1,13 +1,13 @@
 <?php
-    
+
 $host = "localhost";
 $usuario = "root";
 $senha = "";
-$banco = "barbearia";
+$banco = "barbearia_ivan";
 
-$conn = mysqli_connect($host,$usuario,$senha,$banco);
+$conn = mysqli_connect($host, $usuario, $senha, $banco);
 
-if(!$conn) {
+if (!$conn) {
     die("Erro ao conectar:" . mysqli_connect_error());
 }
 
